@@ -1,4 +1,4 @@
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: {{ template "web-app-stateful.fullname" . }}
@@ -10,6 +10,9 @@ metadata:
 spec:
   serviceName: {{ template "web-app-stateful.name" . }}
   replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ template "web-app-stateful.name" . }}
   template:
     metadata:
       labels:
