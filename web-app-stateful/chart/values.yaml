@@ -5,7 +5,7 @@
 replicaCount: 2
 
 image:
-  repository: dardelean/web-app-stateful
+  repository: pvradu/web-app-stateful
   tag: v1
   pullPolicy: IfNotPresent
 
